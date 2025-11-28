@@ -3,9 +3,9 @@ ecommerce_project:
   outputs:
     dev:
       type: postgres
-      host: localhost
-      user: my_user
-      password: "my_password"
+      host: {{ "env_var('DBT_HOST')" }}
+      user: {{ "env_var('DBT_USER')" }}
+      password: {{ "env_var('DBT_PASSWORD')" }}
       port: 5432
-      dbname: my_db
+      dbname: {{ "env_var('DBT_DATABASE')" }}
       schema: public
